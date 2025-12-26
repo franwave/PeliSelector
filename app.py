@@ -11,7 +11,7 @@ st.set_page_config(page_title="UBA Data Science - Movie Recs", layout="wide")
 # --- 2. FUNCIONES DE APOYO (API Y LIMPIEZA) ---
 def fetch_poster(movie_id):
     # REEMPLAZÁ ESTO CON TU KEY DE TMDB
-    api_key = "29c1f4c7e26a986bc0807c0f909f6812"
+    api_key = st.secrets["TMDB_API_KEY"]
     url = f"https://api.themoviedb.org/3/movie/{movie_id}?api_key={api_key}&language=es-ES"
     try:
         data = requests.get(url).json()
